@@ -1,0 +1,11 @@
+ {"0": {
+    "title": "Zorba the Greek",
+    "year": "1964",
+    "awards": 3,
+    "nominations": 7,
+    "isBestPicture": false,
+    "numberOfReferences": 1811,
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "test/filmEntry"
+  	}
+  }

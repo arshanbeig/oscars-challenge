@@ -1,0 +1,52 @@
+{
+  "result": [
+    {
+      "title": "Bohemian Rhapsody",
+      "year": 2018,
+      "awards": 4,
+      "nominations": 5,
+      "isBestPicture": false,
+      "numberOfReferences": 387
+    },
+    {
+      "title": "Green Book",
+      "year": 2018,
+      "awards": 3,
+      "nominations": 5,
+      "isBestPicture": true,
+      "numberOfReferences": 2945
+    },
+    {
+      "title": "Parasite",
+      "year": 2019,
+      "awards": 4,
+      "nominations": 6,
+      "isBestPicture": true,
+      "numberOfReferences": 8855
+    },
+    {
+      "title": "Black Panther",
+      "year": 2018,
+      "awards": 3,
+      "nominations": 7,
+      "isBestPicture": false,
+      "numberOfReferences": 770
+    },
+    {
+      "title": "Roma",
+      "year": 2018,
+      "awards": 3,
+      "nominations": 10,
+      "isBestPicture": false,
+      "numberOfReferences": 616
+    },
+    {
+      "title": "1917",
+      "year": 2019,
+      "awards": 3,
+      "nominations": 10,
+      "isBestPicture": false,
+      "numberOfReferences": 1584
+    }
+  ]
+}
