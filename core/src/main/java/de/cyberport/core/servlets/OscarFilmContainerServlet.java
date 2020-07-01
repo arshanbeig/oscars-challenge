@@ -42,13 +42,13 @@ public class OscarFilmContainerServlet extends SlingSafeMethodsServlet {
 		try {
 			Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
 
-			// set request parameters to Request Parameter Model
+			// Setting request parameters to Request Parameter Model
 			RequestParamModel reqParamModel = req.adaptTo(RequestParamModel.class);
 
-			// check for valid request parameters
+			// Validating request parameters, if invalid send error response
 			Boolean isValidRequest = RequestParamHelper.validateRequestParam(reqParamModel);
 			if (isValidRequest) {
-				// mapping child resources to Movie model and populating List<MovieModel>
+				// Mapping child resources to Movie model and populating List<MovieModel>
 				MoviesListModel movieListModel = req.adaptTo(MoviesListModel.class);
 				
 				List<MovieModel> moviesList = movieListModel.getMovieList();
@@ -57,14 +57,14 @@ public class OscarFilmContainerServlet extends SlingSafeMethodsServlet {
 				List<Predicate<MovieModel>> filterPredicateList = SearchFilterHelper
 						.getSearchFilterPredicateList(reqParamModel);
 				
-				// fetching Comparator based on request parameter
+				// Fetching Comparator based on request parameter
 				Comparator<MovieModel> comparator = SortResultHelper.getSortComparator(reqParamModel);
 				
-				// calculating final results based on filter Predicate and Comparator 
+				// Calculating final results based on filter Predicate and Comparator 
 				List<MovieModel> resultList = ResultAggregater.aggregateResult(moviesList, filterPredicateList,
 						comparator, reqParamModel);
 				
-				//wrapper object for result
+				// Wrapper object for response
 				MovieModelResultWrapper result = new MovieModelResultWrapper();
 				result.setResult(resultList);
 				String resultJson = gson.toJson(result);
@@ -75,7 +75,7 @@ public class OscarFilmContainerServlet extends SlingSafeMethodsServlet {
 				out.flush();
 
 			} else {
-				//response in case of invalid request parameters
+				// Setting Error response in case of invalid request parameters
 				resp.sendError(SC_BAD_REQUEST, ERROR_MESSAGE);
 			}
 

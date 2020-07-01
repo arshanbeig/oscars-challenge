@@ -1,0 +1,23 @@
+#Goal
+The Created solution can be enhanced by improving error handling and adding complete test cases.
+Because of time constraints, I have provided a minimal solution to the requirement.
+The solution covers:
+1. All searching, filtering and sorting scenarios.
+2. Request parameters validation to check invalid request parameter type. i.e year="abc",nominations="xyz" 
+3. Started with TDD keeping SRP in mind. Some test Cases for Servlet and Model classes have been implemented.
+
+## Additional questions:
+1. The test data contains a big amount of test data. If you would have an ability to put this to the repository, how would you structure it?
+2. How can you improve the performance of the functionality that you're going to implement?
+
+Answer.
+I would structure the data in AEM based on movie year.
+For Example :
+Will create folders for a range of 10 years, 1951-1960,1961-1970,1971-1980...
+Based on the size of data these can also be further subdividing into 10 different subfolders based on the exact year. For example 1970-1980 will further be subdivided into 10 different folders 1971,1972...1979,1980.
+This structure would assist content editors to navigate easily while updating the movies data. This structure will also be useful in optimising search queries.
+
+The performance can be enhanced by creating property based indexes and then fetching the data by executing search Queries(Query Builder API using rangeproperty, groups, sortBy etc). Sorting can also be achieved while querying by setting orderby(orderby=@year orderby.sort=desc).
+
+Tagging the assets/resources and implementing tag-based searching and sorting can also prove to be an efficient solution.
+

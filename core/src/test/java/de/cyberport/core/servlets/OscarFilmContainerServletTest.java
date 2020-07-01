@@ -21,7 +21,8 @@ import static javax.servlet.http.HttpServletResponse.SC_OK;
 import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 
 /**
- * @author Vitalii Afonin
+ * @author arshanbeig
+ *
  */
 @ExtendWith(AemContextExtension.class)
 class OscarFilmContainerServletTest {

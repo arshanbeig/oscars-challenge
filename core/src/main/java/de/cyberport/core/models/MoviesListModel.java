@@ -30,7 +30,6 @@ public class MoviesListModel {
 	@SlingObject
 	private SlingHttpServletRequest slingRequest;
 
-	@Expose @SerializedName(value = "result")
 	private List<MovieModel> movieList;
 
 	public List<MovieModel> getMovieList() {
@@ -46,7 +45,7 @@ public class MoviesListModel {
 				movieList.add(movie);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error(e.getMessage());
 		}
 
 	}
